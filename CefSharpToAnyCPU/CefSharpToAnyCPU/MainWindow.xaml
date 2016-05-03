@@ -1,0 +1,26 @@
+﻿<Window x:Class="CefSharpToAnyCPU.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:local="clr-namespace:CefSharpToAnyCPU"
+        Title="MainWindow" Height="350" Width="525">
+	<Window.DataContext>
+		<local:MainWindowViewModel />
+	</Window.DataContext>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="20" />
+			<RowDefinition />
+		</Grid.RowDefinitions>
+		<!--<cefSharp:ChromiumWebBrowser Grid.Row="0"
+        Address="https://github.com/cefsharp/CefSharp/wiki/Frequently-asked-questions" />-->
+		<StackPanel Grid.Row="0" Orientation="Horizontal">
+			<!--<Button Content="Back" Command="{Binding ElementName=ChromeBrowser, Path=BackCommand}" />-->
+			<!--<Button Content="Forward" />-->
+			<TextBlock Grid.Column="0" Text="Url" />
+			<TextBox Grid.Column="1" Text="{Binding Url, UpdateSourceTrigger=PropertyChanged}" Width="200" />
+			<Button Width="100" Height="30" Content="Go" Click="Button_Click" />
+
+		</StackPanel>
+
+	</Grid>
+</Window>
